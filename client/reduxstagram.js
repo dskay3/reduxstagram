@@ -19,6 +19,11 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 
+// for error tracking
+import Raven from 'raven-js';
+import { sentry_url, logException } from './data/config';
+Raven.config(sentry_url).install();
+
 // route component
 const router = (
   <Provider store={store}>

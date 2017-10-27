@@ -3,6 +3,10 @@ const comments = {
     {
       "text":"Totally need to try this.",
       "user": "heavymetaladam"
+    },
+    {
+      "text":"Nice!",
+      "user": "danielkim"
     }
   ],
   "BAcyDyQwcXX":[
@@ -21,6 +25,10 @@ const comments = {
     {
       "text":"😍 love Hamilton!",
       "user": "willowtreemegs"
+    },
+    {
+      "text":"Nice!",
+      "user": "danielkim"
     }
   ],
   "BAPIPRjQce9":[
