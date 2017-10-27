@@ -8,7 +8,7 @@ import { render } from 'react-dom';
 import css from './styles/style.styl';
 
 // import components
-import Main from './components/Main';
+import App from './components/App';
 import Single from './components/Single';
 import PhotoGrid from './components/PhotoGrid';
 
@@ -21,20 +21,22 @@ import store, { history } from './store';
 
 // route component
 const router = (
-  <Router history={browserHistory}>
+  <Provider store={store}>
+    <Router history={history}>
 
-    {/* Homepage */}
-    <Route path="/" component={Main}>
+      {/* Homepage */}
+      <Route path="/" component={App}>
 
-      {/* pass Index route for the main component if route is / */}
-      <IndexRoute component={PhotoGrid}></IndexRoute>
+        {/* pass Index route for the main component if route is / */}
+        <IndexRoute component={PhotoGrid}></IndexRoute>
 
-      {/* pass Single route for the main component if component is /view/:postId */}
-      <Route path="/view/:postId" component={Single}></Route>
+        {/* pass Single route for the main component if component is /view/:postId */}
+        <Route path="/view/:postId" component={Single}></Route>
 
-    </Route>
+      </Route>
 
-  </Router>
+    </Router>
+  </Provider>
 );
 
 // render
