@@ -5,12 +5,16 @@ import Comments from './Comments';
 
 class Single extends Component {
   render() {
+    const { postId } = this.props.params;
+    
     // index of post
-    const i = this.props.posts.findIndex(post => post.code === this.props.params.postId);
+    const i = this.props.posts.findIndex(post => post.code === postId);
     console.log(i);
 
     const post = this.props.posts[i];
     console.log(post);
+
+    const postComments = this.props.comments[postId || []];
 
     // get post
     return (
@@ -21,8 +25,10 @@ class Single extends Component {
           {...this.props}
         />
 
-        <Comments />
-        
+        <Comments
+          postComments={postComments}
+        />
+
       </div>
     )
   }
