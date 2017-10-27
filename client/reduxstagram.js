@@ -15,6 +15,10 @@ import PhotoGrid from './components/PhotoGrid';
 // import react router dependencies
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
+// import provider from react-redux (bindings to connect react and redux)
+import { Provider } from 'react-redux';
+import store, { history } from './store';
+
 // route component
 const router = (
   <Router history={browserHistory}>
@@ -29,7 +33,7 @@ const router = (
       <Route path="/view/:postId" component={Single}></Route>
 
     </Route>
-    
+
   </Router>
 );
 
