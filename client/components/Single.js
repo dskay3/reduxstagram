@@ -27,6 +27,7 @@ class Single extends Component {
 
         <Comments
           postComments={postComments}
+          {...this.props}
         />
 
       </div>
